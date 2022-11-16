@@ -1,0 +1,16 @@
+
+#content{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 1fr 40px;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+  width: 100vw;
+  max-height: 100vh;
+  background-color: #17263A;
+  color: #edf2f4;
+}
+
+

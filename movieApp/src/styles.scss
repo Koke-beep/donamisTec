@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
+
+
+:root{
+  --font-primary: 'Roboto', sans-serif;
+  --font-secondary: 'Limelight', cursive;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+  font-family: var(--font-primary);
+  font-size: 13px;
+}
+body{
+  margin: 0;
+}
+

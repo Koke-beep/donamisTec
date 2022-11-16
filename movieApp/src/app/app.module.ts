@@ -3,14 +3,26 @@ import { BrowserModule } from '@angular/platform-browser'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
+import { NotFoundComponent } from './views/not-found/not-found.component'
+import { DashboardMoviesComponent } from './views/dashboard-movies/dashboard-movies.component'
+import { HeaderComponent } from './components/header/header.component'
+import { FooterComponent } from './components/footer/footer.component'
+import { MovieCardComponent } from './components/movie-card/movie-card.component'
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
 	declarations: [
-		AppComponent
+		AppComponent,
+		NotFoundComponent,
+		DashboardMoviesComponent,
+		HeaderComponent,
+		FooterComponent,
+		MovieCardComponent,
 	],
 	imports: [
 		BrowserModule,
-		AppRoutingModule
+		AppRoutingModule,
+		HttpClientModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

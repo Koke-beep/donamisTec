@@ -1,0 +1,9 @@
+{
+  "/client-api/*": {
+    "target": "https://api.themoviedb.org/3",
+    "pathRewrite": { "^/client-api": "" },
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}

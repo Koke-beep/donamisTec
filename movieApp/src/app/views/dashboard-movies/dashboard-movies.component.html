@@ -1,3 +1,9 @@
 <div class="dashboard">
-  <app-movie-card></app-movie-card>
+
+    <div class="movie" *ngFor="let movie of moviesList! | async">
+      <button class="movie__selector">
+        <img [src]="compactUrlImg(movie?.backdrop_path!)">
+      </button>
+    </div>
+  <!-- <app-movie-card></app-movie-card> -->
 </div>

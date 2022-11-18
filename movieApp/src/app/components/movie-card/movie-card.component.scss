@@ -3,9 +3,11 @@
   flex-direction: column;
   justify-content: center;
   max-width: 340px;
-  // min-height: 500px;
-  border: 2px solid white;
-  border-radius: 15px;
+  background: rgba( 255, 255, 255, 0.05 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  border-radius: 17px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  min-width: 340px;
 }
 
 .card > div {
@@ -22,7 +24,7 @@
 
 .header{
   height: 190px;
-
+  padding:0 1px;
   img{
     width: 100%;
     max-height: 100%;
@@ -35,14 +37,17 @@
   font-family: var(--font-secondary);
   font-size: 2rem;
   text-align: center;
-  margin: 5px 0;
+  margin: 10px 0 5px 0;
 }
 
 .content{
+  display: flex;
+  flex-direction: column;
   padding: 0 15px 5px 15px;
   flex: 1 0 auto;
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
+  background:#1D2F49;
 
   .general_info{
     text-align: justify;
@@ -50,18 +55,81 @@
 
     span { color: rgb(190, 190, 190) }
 
-    p { margin: 5px 0; }
+    // p {
+    //   margin: 5px 0;
+    //  }
+  }
+}
+
+.detail{
+  margin: 10px 0;
+
+  .overview{
+    color: white;
+    letter-spacing: 1.5px;
+    text-align: justify;
+    font-size: 14px;
+    margin-top: 15px;
+  }
+}
+.specs{
+  display: flex;
+  gap: 10px;
+  margin: 5px 0;
+}
+
+.specs div:not(:first-child) {
+  p{
+    display: none;
+  }
+}
+
+@media screen and (min-width: 615px){
+  .card{
+    min-width: 40vw;
+    max-width: 600px;
   }
 
-  .detail{
-    margin: 10px 0;
-    // max-height: 150px;
+  .specs{
+    flex-wrap: wrap;
+    width: max-content;
+    max-width: 130px;
+    height: max-content;
+    max-height: 100%;
+    margin-left: 10px;
+    margin-top: 10px;
 
-    .overview{
-      color: white;
-      letter-spacing: 1.5px;
-      text-align: justify;
+    div{
+      display: flex;
     }
+
+    p{
+      color: rgb(190, 190, 190);
+
+      span{
+        color: white;
+      }
+    }
+  }
+
+  .specs div:not(:first-child) {
+    p{
+      display: inline;
+    }
+  }
+
+  .content{
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+
+    .title{
+      width: 100%;
+    }
+  }
+  .detail{
+    margin-right: 15px;
+    flex: 1 1 350px;
+    // max-width: 100%;
   }
 }
 

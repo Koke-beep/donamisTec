@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 import { ApiConfig } from '../models/apiConfig.model'
-import { distinctUntilChanged, map } from 'rxjs/operators'
+import { distinctUntilChanged, map, take } from 'rxjs/operators'
 import { Movie, MovieList } from '../models/movie.model'
 import { BehaviorSubject, Observable } from 'rxjs'
 import { environment } from 'src/environments/environment'
@@ -27,6 +27,7 @@ export class HttpMovieService {
 			map(({images}) => {
 				this._imgUrl.next(`${images?.base_url}${images?.backdrop_sizes[0]}`)
 			}),
+			take(1)
 		).subscribe()
 	}
 

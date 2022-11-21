@@ -1,0 +1,7 @@
+<div class="toastCard" *ngIf="$toastMessage | async as message">
+  <div class="errorCode">
+    <i class="fa-solid fa-xmark"></i>
+    <h1>Error: {{message.status}}</h1>
+  </div>
+  <span>{{message.message}}</span>
+</div>

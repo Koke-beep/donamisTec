@@ -1,0 +1,43 @@
+  <div class="card" *ngIf="$movie | async as movie">
+    <div class="header">
+      <img [src]="movie.backdrop_path">
+      <div class="blur_footer"></div>
+    </div>
+    <div class="content">
+      <h2 class="title">{{movie.title}}</h2>
+      <div class="specs" style="display: flex">
+        <div>
+          <i
+            *ngFor="let star of calculateStars(movie.vote_average)"
+            class="fa-solid fa-star"
+            [ngStyle]="{'color': star ? 'yellow' : 'white'}"
+          ></i>
+        </div>
+        <div>
+          <p class="te">Year: </p>
+          <span>{{movie.release_date | date: 'YYYY'}}</span>
+        </div>
+        <div>
+          <p>Duration: </p>
+          <span>{{movie.runtime}} min</span>
+        </div>
+        <div>
+          <p>Language: </p>
+          <span>{{languagesMovie(movie.spoken_languages) || ''}}</span>
+        </div>
+      </div>
+      <div class="detail">
+        <div class="general_info">
+          <p>
+            <span>Companies: </span>
+            <span style="color: white" *ngFor="let company of movie.production_companies">{{company.name}}</span>
+          </p>
+          <p>
+            <span>Genres: </span>
+            <span style="color: white" *ngFor="let genre of movie.genres">{{genre.name}}</span>
+          </p>
+        </div>
+        <p class="overview">{{movie.overview}}</p>
+      </div>
+    </div>
+  </div>

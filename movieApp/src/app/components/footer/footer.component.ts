@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
+import { Router } from '@angular/router'
 
 @Component({
-  selector: 'app-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+	selector: 'app-footer',
+	templateUrl: './footer.component.html',
+	styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+	constructor(private _router: Router) { }
 
-  ngOnInit(): void {
-  }
+	ngOnInit(): void {}
+
+	redirectHomePage(){
+  	this._router.navigate(['/dashboard'])
+	}
 
 }

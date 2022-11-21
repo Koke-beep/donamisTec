@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
-
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css");
 
 :root{
   --font-primary: 'Roboto', sans-serif;
@@ -18,5 +18,43 @@
 }
 body{
   margin: 0;
+  background:#1D2F49;
 }
+
+a{
+  font-size: 0.8rem;
+  text-decoration: none;
+  outline: 0;
+  cursor: not-allowed;
+}
+
+li{
+  list-style-type: none;
+}
+
+.logoSection{
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 20px;
+  overflow: hidden;
+  align-items: center;
+  max-width: max-content;
+  background: none;
+  min-height: 100%;
+  border: none;
+  cursor: pointer;
+
+  .logo{
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 5px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    color: white;
+    font-family: var(--font-secondary);
+  }
+}
+
 

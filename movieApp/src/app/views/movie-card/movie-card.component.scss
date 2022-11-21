@@ -1,13 +1,14 @@
+
 .card{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 340px;
-  background: rgba( 255, 255, 255, 0.05 );
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  background: #ffffff0d;
+  box-shadow: 0 8px 32px 0 #1f26875e;
   border-radius: 17px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border: 1px solid #ffffff2e;
   min-width: 340px;
+  color: white;
 }
 
 .card > div {
@@ -53,11 +54,7 @@
     text-align: justify;
     text-justify: inter-word;
 
-    span { color: rgb(190, 190, 190) }
-
-    // p {
-    //   margin: 5px 0;
-    //  }
+    span { color: #bebebe }
   }
 }
 
@@ -65,7 +62,6 @@
   margin: 10px 0;
 
   .overview{
-    color: white;
     letter-spacing: 1.5px;
     text-align: justify;
     font-size: 14px;
@@ -104,11 +100,7 @@
     }
 
     p{
-      color: rgb(190, 190, 190);
-
-      span{
-        color: white;
-      }
+      color: #bebebe;
     }
   }
 
@@ -128,8 +120,7 @@
   }
   .detail{
     margin-right: 15px;
-    flex: 1 1 350px;
-    // max-width: 100%;
+    flex: 1 1 0;
   }
 }
 

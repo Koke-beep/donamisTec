@@ -1,1 +1,25 @@
-<p>header works!</p>
+<div class="headerBox" [ngClass]="scrollIsBottom ? 'scrollOn' : 'scrollOff'">
+  <button class="logoSection" (click)="redirectHomePage()">
+      <i class="fa-solid fa-film logo"></i>
+      <h1>Frame</h1>
+  </button>
+
+  <div class="searcherSection">
+    <input class="searcher" placeholder="Only click available">
+  </div>
+
+  <div class="userSection">
+    <img src="../../../assets/image/1617267386810.jpg" class="userImg">
+    <div class="userMenu">
+      <ul class="menuOptions">
+        <li>
+          <a class="menuItem">FAVORITES</a>
+        </li>
+        <li>
+          <a class="menuItem">MY LIST</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>

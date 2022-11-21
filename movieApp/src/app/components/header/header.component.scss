@@ -1,0 +1,93 @@
+.headerBox{
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 8px 15px;
+  color: white;
+  transition: 0.3s background;
+  max-width: 100vw;
+  min-width: 100vw;
+
+  & > div:not(.searcherSection), .logoSection{
+    width: 20vw;
+    min-width: 20vw;
+  }
+}
+
+.scrollOn{
+  background: #111D2C;
+}
+
+.scrollOff{
+  background: linear-gradient(#111D2C,#1D2F49);
+}
+
+.searcherSection{
+  width: 60vw;
+  position: relative;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.searcher{
+  position: relative;
+  width: 60%;
+  border-radius: 50px;
+  height: 22px;
+  outline: none;
+  appearance: none;
+  border:none;
+  padding-left: 10px;
+  transition: .3s width;
+
+  &:focus{
+    width: 90%;
+  }
+}
+
+.userSection {
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+  max-height: 25px;
+
+  .userImg{
+    width: 25px;
+    border-radius: 50%;
+    margin: 0 20px;
+  }
+
+  .userMenu {
+    min-width: 120px;
+
+    ul {
+      height: 100%;
+      display: flex;
+      gap: 15px;
+    }
+  }
+}
+
+.menuItem:hover {
+  transform: scale(1.1);
+  font-weight: bold;
+}
+
+@media screen and (min-width: 930px){
+  .userSection {
+    justify-content: initial;
+    flex-direction: row-reverse;
+  }
+
+  .searcher{
+    width: 40%;
+
+    &:focus{
+      width: 50%;
+    }
+  }
+}

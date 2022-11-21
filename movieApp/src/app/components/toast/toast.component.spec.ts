@@ -1,14 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
+import { ToastService } from 'src/app/services/toast.service'
 
 import { ToastComponent } from './toast.component'
 
-fdescribe('ToastComponent', () => {
+describe('ToastComponent', () => {
 	let component: ToastComponent
 	let fixture: ComponentFixture<ToastComponent>
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [ ToastComponent ]
+			declarations: [ ToastComponent ],
+			providers: [ToastService]
 		})
 			.compileComponents()
 	})

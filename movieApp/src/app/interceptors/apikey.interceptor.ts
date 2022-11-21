@@ -8,7 +8,7 @@ import {
 import { Observable, throwError } from 'rxjs'
 import { catchError, map } from 'rxjs/operators'
 import ToastMsg from 'src/app/models/toastMessage.model'
-import { ToastService } from '../toast.service'
+import { ToastService } from '../services/toast.service'
 
 @Injectable()
 export class ApikeyInterceptor implements HttpInterceptor {

@@ -7,10 +7,11 @@ import { NotFoundComponent } from './views/not-found/not-found.component'
 import { DashboardMoviesComponent } from './views/dashboard-movies/dashboard-movies.component'
 import { HeaderComponent } from './components/header/header.component'
 import { FooterComponent } from './components/footer/footer.component'
-import { MovieCardComponent } from './components/movie-card/movie-card.component'
+import { MovieCardComponent } from './views/movie-card/movie-card.component'
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { ApikeyInterceptor } from './services/interceptors/apikey.interceptor'
+import { ToastComponent } from './components/toast/toast.component'
 
 @NgModule({
 	declarations: [
@@ -20,6 +21,7 @@ import { ApikeyInterceptor } from './services/interceptors/apikey.interceptor'
 		HeaderComponent,
 		FooterComponent,
 		MovieCardComponent,
+		ToastComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -28,7 +30,9 @@ import { ApikeyInterceptor } from './services/interceptors/apikey.interceptor'
 		FontAwesomeModule
 	],
 	providers: [
-		{ provide: HTTP_INTERCEPTORS, useClass: ApikeyInterceptor, multi: true}
+		{ provide: HTTP_INTERCEPTORS, useClass: ApikeyInterceptor, multi: true},
+		{ provide: Window, useValue: window},
+		{ provide: Document, useValue: document},
 	],
 	bootstrap: [AppComponent],
 })

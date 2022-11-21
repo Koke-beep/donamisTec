@@ -1,0 +1,34 @@
+.toastCard{
+  position: absolute;
+  top:0;
+  right: 0;
+  width: 300px;
+  z-index: 9999;
+  font-size: 1.1rem;
+  padding: 15px;
+  background: rgb(255, 130, 130);
+  box-shadow:0 0 10px 2px rgb(255, 46, 46);
+  min-height: 80px;
+  max-height: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-bottom-left-radius: 10px;
+}
+
+.errorCode{
+  display: flex;
+  align-content: center;
+  color: red;
+  gap: 10px;
+
+  i{
+    text-align: center;
+    // height: 2rem;
+    // width: 2rem;
+    font-size: 2rem;
+  }
+  h1 {
+    margin: auto 0;
+    font-size: 1.5rem;
+  }
+}

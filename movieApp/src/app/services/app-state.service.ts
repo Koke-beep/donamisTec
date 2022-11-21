@@ -1,9 +1,7 @@
-import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 import { BehaviorSubject, Observable } from 'rxjs'
-import { distinctUntilChanged, map } from 'rxjs/operators'
-import { ApiConfig } from '../models/apiConfig.model'
-import { MovieResult } from '../models/movie.model'
+import { distinctUntilChanged, map, take } from 'rxjs/operators'
+import { Movie, MovieResult } from '../models/movie.model'
 import AppState from '../models/state.model'
 import { HttpMovieService } from './http-movie.service'
 
@@ -17,11 +15,9 @@ export class AppStateService {
 		selectedFilm: null
 	} as AppState)
 
-
-	public $imgUrlConfig!: Observable<string>
-	public $movies!: Observable<MovieResult[]>
-	public $selectedFilm!: Observable<MovieResult>
-
+	public readonly $imgUrlConfig!: Observable<string>
+	public readonly $movies!: Observable<MovieResult[]>
+	public readonly $selectedFilm!: Observable<Movie>
 	public readonly $appState: Observable<AppState> = this._appState.asObservable()
 
 	constructor(private _httpMovie: HttpMovieService) {
@@ -34,23 +30,32 @@ export class AppStateService {
 			distinctUntilChanged()
 		)
 		this.$selectedFilm = this._appState.pipe(
-			map(({selectedFilm}) => selectedFilm as MovieResult ),
+			map(({selectedFilm}) => selectedFilm as Movie ),
 			distinctUntilChanged()
 		)
 
-		this.initializeMoviesData()
+		this.getMoviesList()
 	}
 
-	initializeMoviesData(){
-		this._httpMovie.getPopularFilms().subscribe(({results}) => {
+	getMoviesList(){
+		this._httpMovie.getPopularFilms().pipe(
+			take(1)
+		).subscribe(({results}) => {
 			this._appState.next({...this._appState.value, movies: results})
 		})
 	}
+
+	getMovieDetail(id: string){
+		this._httpMovie.getMovieDetail(id).pipe(
+			map(res => {
+				this._appState.next({...this._appState.value, selectedFilm: {...res}})
+			}),
+			take(1)
+		).subscribe()
+	}
+
+	removeMovieSelected(){
+		this._appState.next({...this._appState.value, selectedFilm: null})
+	}
 }
 
-// getApiConfiguration(){
-// 	this._http.get<ApiConfig>('https://api.themoviedb.org/3/configuration?api_key=c6aeee577586ba38e487b74dfede5deb').subscribe(response => {
-// 		this._appState.next({...this._appState.value, imgUrlConfig: {...response}})
-// 	})
-
-// }

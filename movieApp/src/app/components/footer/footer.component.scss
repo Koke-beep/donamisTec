@@ -1,7 +1,42 @@
 footer{
-  background: black;
+  display: flex;
+  align-items: center;
+  background: #111D2C;
   height: 100%;
-}
-p{
   color: white;
+  padding: 0 25px;
 }
+
+.logoSection{
+  width: 20%;
+  min-width: fit-content;;
+}
+
+.optionsFooter{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0 15px;
+  gap: 25px;
+
+  .optionItem{
+    transition: transform 0.3s;
+
+    &:hover{
+      display: inline-flex;
+      transform: scale(1.2);
+      font-weight: bold;
+    }
+  }
+}
+
+.socialLinks{
+  display: flex;
+  gap: 15px;
+  width: fit-content;
+
+  i {
+    font-size: 1.2rem;
+  }
+}
+
